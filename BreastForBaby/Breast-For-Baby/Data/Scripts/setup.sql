@@ -1,0 +1,12 @@
+﻿CREATE TABLE SchemaVersion (
+    Hash TEXT NOT NULL
+);
+
+CREATE TABLE Event (
+	Id INTEGER PRIMARY KEY AUTOINCREMENT,
+    Name TEXT NOT NULL,
+    Date TEXT NOT NULL,
+	Time TEXT NOT NULL,
+	StartDateTime TEXT NOT NULL,
+	Deleted INTEGER NOT NULL
+);

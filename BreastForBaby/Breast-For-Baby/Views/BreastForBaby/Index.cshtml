@@ -1,0 +1,136 @@
+﻿@model Breast_For_Baby.Models.HomePageModel
+
+@{
+    ViewBag.Title = "";
+}
+
+<div class="container body-content">
+
+    <div class="row">
+        <div class="col-md-4">
+            <img src="~/Content/Media/Breast For Baby_LOGO (R).png" id="logo-image" alt="Breast-For-Baby Logo" />
+        </div>
+        <div class="col-md-8">
+            <video id="intro-video" controls="controls">
+                <source src="~/Content/Media/Breast%20for%20Baby.mp4" type="video/mp4" />
+            </video>
+        </div>
+        <div class="col-md-8 col-sm-4">
+            <h2>Watch our video</h2>
+            <p>Watch our video to learn about what we do.</p>
+            <p>
+                <a class="btn btn-default" href="https://youtu.be/6zYUJbiwXBs" target="_blank">Watch it on YouTube &raquo;</a>
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <h2>Supporting mums feeding breastmilk</h2>
+        <p>
+            Many women face difficulties when trying to feed their baby breastmilk. At Breast For Baby we are passionate about helping
+            women to overcome these difficulties without the 'all or nothing' pressure to breastfeed. We have support groups and free educational classes
+            on alternating weeks to help you be prepared to feed your baby breastmilk.
+        </p>
+    </div>
+
+    <div class="jumbotron">
+        <div class="row">
+            <div class="col-md-9">
+                <h1>ONE TO ONE SUPPORT</h1>
+            </div>
+            <div class="col-md-3">
+                <input class="btn-primary" type="button" value="Book now" style="margin: 20px 5px; width: 100%" onclick="location.href='/book'" />
+            </div>
+        </div>
+
+        <p align="center">only <span class="price">£30</span> per hour<sup>1</sup></p>
+        <p class="text-muted" style="font-size: 16px">
+            We can visit you at home or at the hospital, day zero or after six months, we offer 24/7 support when you need it.
+        </p>
+
+        <div class="well">
+            <h2 class="text-info">THE BREASTMILK BUNDLE</h2>
+            <p class="text-muted">Our experience tells us this is everything you need to get feeding your baby breastmilk</p>
+            <div class="list-group">
+                <div class="list-group-item">
+                    <strong>8 hours</strong> one to one support
+                </div>
+                <div class="list-group-item">
+                    <strong>6 months</strong> UNLIMITED access to support groups and educational sessions
+                </div>
+                <div class="list-group-item">
+                    <strong>1</strong> FREE call out <sup>2</sup>
+                </div>
+                <div class="list-group-item">
+                    <strong>80%</strong> refund on any hours not used <sup>3</sup>
+                </div>
+            </div>
+            <p align="right">all this only <span class="price" style="color: darkgreen">£239</span></p>
+
+            <p align="right">
+                <input class="btn-success" type="button" value="Book now" style="margin: 20px 5px; width: 80%; padding: 10px" onclick="location.href='/book'" />
+            </p>
+
+        </div>
+        <p style="font-size: 14px"><sup>1</sup> a call out fee applies to bookings made with less than 24 hours notice. £50 during the day, £70 during evenings, weekends and overnight</p>
+        <p style="font-size: 14px"><sup>2</sup> covers the cost of the usual call out fee when bookings are made with less than 24 hours notice. Hours will still be taken from the bundled allowance or charged accordingly. Additional emergency call outs can be made but the usual fee will apply</p>
+        <p style="font-size: 14px"><sup>3</sup> refund assumes a rate of £30 per hour and a refund payout assumes an end to your bundle benefits, including access to groups and unused hours or callouts</p>
+    </div>
+    <div class="row">
+        <h2>Get in touch with us to book support or find out more</h2>
+        <div class="col-md-3">
+            <div class="well">
+                <span class="fa fa-facebook-square" style="margin-right: 5px;"></span><a href="https://www.facebook.com/pages/Breast-for-Baby/932248053480909" target="_blank" style="margin-right: 5px;">Like us on Facebook</a>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="well">
+                <span class="fa fa-twitter-square" style="margin-right: 5px;"></span><a href="https://twitter.com/breast_for_baby" target="_blank" style="margin-right: 5px;">Follow us on Twitter</a>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="well">
+                <span class="glyphicon glyphicon-envelope" aria-hidden="true" style="margin-right: 10px"></span><a href="mailto:hello@breast-for-baby.co.uk">hello@breast-for-baby.co.uk</a>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="well">
+                <span class="glyphicon glyphicon-earphone" aria-hidden="true" style="margin-right: 10px"></span>0115 888 1330
+            </div>
+        </div>
+    </div>
+    <div class="well">
+        <div class="row">
+            <div class="col-md-6">
+                <h1 align="center">Free Educational Sessions</h1>
+                <hr />
+                <p align="center">
+                    <span style="font-size: 26px;">@Model.Sessions.EducationalEvent1.Date</span> <br />@Model.Sessions.EducationalEvent1.Time<br />
+                    <em>and</em><br />
+                    <span style="font-size: 26px;">@Model.Sessions.EducationalEvent2.Date</span> <br />@Model.Sessions.EducationalEvent2.Time
+                </p>
+                <hr />
+                <p align="center">
+                    These two education classes will help you to be prepared to feed your baby breastmilk through breastfeeding or expressing.
+                </p>
+                <p align="center">
+                    Education sessions run every other Monday at the barn behind the <a href="https://www.google.co.uk/maps/place/Hearty+Goodfellow/&#64;53.0761922,-0.948428,18z/data=!4m2!3m1!1s0x0000000000000000:0xdad78d3937f3541e">Hearty Goodfellow Pub, Southwell</a>.
+                </p>
+            </div>
+            <div class="col-md-6">
+                <h1 align="center">Support Group</h1>
+                <hr />
+                <p align="center">
+                    <span style="font-size: 26px;">@Model.Sessions.SupportGroup.Date</span> <br />@Model.Sessions.SupportGroup.Time
+                </p>
+                <hr />
+                <p align="center">Meet other breastfeeding mums, discuss current topics and concerns around breastfeeding.</p>
+                <p align="center">
+                    <strong>£5.00</strong> (per person per session)
+                </p>
+                <p align="center">
+                    Support sessions run once a month (usually on the last Wednesday) at the barn behind the <a href="https://www.google.co.uk/maps/place/Hearty+Goodfellow/&#64;53.0761922,-0.948428,18z/data=!4m2!3m1!1s0x0000000000000000:0xdad78d3937f3541e">Hearty Goodfellow Pub, Southwell</a>.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

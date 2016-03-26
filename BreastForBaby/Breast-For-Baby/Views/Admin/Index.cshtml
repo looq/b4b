@@ -1,0 +1,102 @@
+﻿@using System.Web.Mvc.Html
+@using Breast_For_Baby.Data
+@model List<Breast_For_Baby.Controllers.EventViewModel>
+<div class="container body-content">
+
+    <h1>Admin</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Date (description)
+                </th>
+                <th>
+                    Time (description)
+                </th>
+                <th>
+                    Start DateTime (exact)
+                </th>
+                <th>
+                    Add/Delete
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var e in Model)
+            {
+                <text>
+                    <tr @if (e.CurrentlyLive)
+                        {
+                            @:class="live"
+                        }>
+                        <td>
+                            @e.Name
+                        </td>
+                        <td>
+                            @e.DateDescription
+                        </td>
+                        <td>
+                            @e.TimeDescription
+                        </td>
+                        <td>
+                            @e.StartDateTime
+                        </td>
+                        <td>
+                            <span class="glyphicon glyphicon-minus" onclick="deleteEvent(@e.Id)"></span>
+                        </td>
+                    </tr>
+                </text>
+            }
+            <tr>
+                <td>
+                    @Html.DropDownList(
+                   "eventName",
+                   new List<SelectListItem>
+                   {
+                       new SelectListItem { Selected = true, Text = "Add a new event", Value = null }
+                   }
+                   .Union(EventName.ListAll.Select(e => new SelectListItem { Text = e, Value = e })), new { id = "txt-name"})
+                </td>
+                <td>
+                    <input type="text" id="txt-date" />
+                </td>
+                <td>
+                    <input type="text" id="txt-time" />
+                </td>
+                <td>
+                    <input type="text" id="txt-datetime"/>
+                </td>
+                <td>
+                    <span class="glyphicon glyphicon-plus" onclick="newEvent()"></span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+@section scripts
+{
+    <script>
+        var deleteEvent = function(id) {
+            $.post('deleteEvent', { 'id':id }, function() {
+                location.reload();
+            });
+        }
+
+        var newEvent = function () {
+
+            var name = $('#txt-name').val();
+            var date = $('#txt-date').val();
+            var time = $('#txt-time').val();
+            var datetime = $('#txt-datetime').val();
+
+            $.post('createEvent', { 'name': name, 'date': date, 'time': time, 'datetime': datetime }, function () {
+                location.reload();
+            });
+        }
+    </script>
+}

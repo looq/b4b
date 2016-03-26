@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "More information";
+}
+
+<div class="container body-content">
+    <div class="row">
+        <div class="col-md-4">
+            <img src="~/Content/Media/Breast For Baby_LOGO (R).png" id="logo-image" alt="Breast-For-Baby Logo" style="width: 90%; margin-top: 20px;" />
+        </div>
+        <div class="col-md-8">
+
+            <h2>Enquire now</h2>
+
+            <p>Thanks for your interest. Complete this form and we will get in touch with you as soon as we can.</p>
+
+            @using (Html.BeginForm("Book", "BreastForBaby", FormMethod.Post))
+            {
+                <div class="list-group">
+                    <div class="list-group-item">
+                        <p>What's your name?</p>
+                        <input data-val="true" data-val-required="Please provide your name." id="Name" name="Name" placeholder="your name" style="width: 100%; padding: 0 10px;" type="text" value="" />
+                        <span class="field-validation-valid" data-valmsg-for="Name" data-valmsg-replace="true"></span>
+                    </div>
+                    <div class="list-group-item">
+                        <p>Give us a way to get in contact with you. It could be a phone number, email address or skype name, or whatever way you would prefer to be contacted.</p>
+                        <textarea cols="20" data-val="true" data-val-required="Please tell us how we can contact you." id="ContactMethod" name="ContactMethod" placeholder="contact method" rows="2" style="width:100%; padding: 0 10px;"></textarea>
+                        <span class="field-validation-valid" data-valmsg-for="ContactMethod" data-valmsg-replace="true"></span>
+                    </div>
+                    <div class="list-group-item">
+                        <p>Optionally, to help us to better respond to your request, give us a brief description of your situation and how we can help you.</p>
+                        <textarea cols="20" id="Enquiry" name="Situation" placeholder="about your situation (optional)" rows="2" style="width: 100%; padding: 0 10px;"></textarea>
+                    </div>
+                </div>
+
+                <input type="submit" class="btn-group-lg btn-success" style="width: 200px; height: 50px; padding: 5px; font-size: 24px" value="Submit" />
+                <a href="/" style="margin-left: 20px;">Go back</a>
+            }
+        </div>
+    </div>
+</div>
